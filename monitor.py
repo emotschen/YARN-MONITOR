@@ -10,7 +10,7 @@ import pymysql
 
 
 #获取JSON串，并存储在字典repo_dicts中
-url='http://pc-gzgynn02.100.idc.tf56:19888/ws/v1/history/mapreduce/jobs'
+url='http://hosts:19888/ws/v1/history/mapreduce/jobs'
 r=requests.get(url)
 print("（网页相应状态 返回200：标识成功）Status code :",r.status_code)
 response_dic=r.json()
@@ -98,7 +98,7 @@ print arr['Compared']
 arr1 = [[0 for col in range(3)] for row in range(10)]
 
 for job_id_ck in range(len(job_id)):
-    joburl='http://pc-gzgynn02.100.idc.tf56:19888/ws/v1/history/mapreduce/jobs/'+job_id[job_id_ck]+'/conf'
+    joburl='http://localhost:19888/ws/v1/history/mapreduce/jobs/'+job_id[job_id_ck]+'/conf'
     job_r=requests.get(joburl)
     job_dic=job_r.json()
     job_dics=job_dic['conf']
